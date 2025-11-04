@@ -50,7 +50,7 @@ summary(FittedModel1)
 FittedModel2 = Arima(Inflation, order=c(2,1,5), include.drift = TRUE)
 summary(FittedModel2)
 
-AutoModel <- auto.arima(Inflation)
+AutoModel = auto.arima(Inflation)
 summary(AutoModel)
 
 # Comparing the models on AIC
@@ -62,4 +62,5 @@ AIC(AutoModel)
 salesForecast= forecast(FittedModel1,h=12)
 png(filename = file.path(output_dir, "Forecast_ARIMA_411.png"), width = 800, height = 600)
 autoplot(salesForecast, ylab='Inflation Rate (%)')
+
 dev.off()
