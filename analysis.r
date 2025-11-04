@@ -53,14 +53,16 @@ summary(FittedModel2)
 AutoModel = auto.arima(Inflation)
 summary(AutoModel)
 
-# Comparing the models on AIC
-AIC(FittedModel1)
-AIC(FittedModel2)
-AIC(AutoModel)
+# Comparing the models on AIC and BIC
+Model_Comparison <- data.frame(
+  Model = c("ARIMA(4,1,1)", "ARIMA(2,1,5)", "Auto ARIMA"),
+  AIC = c(AIC(FittedModel1), AIC(FittedModel2), AIC(AutoModel)),
+  BIC = c(BIC(FittedModel1), BIC(FittedModel2), BIC(AutoModel))
+)
+print(Model_Comparison)
 
 # Forecasting
 salesForecast= forecast(FittedModel1,h=12)
 png(filename = file.path(output_dir, "Forecast_ARIMA_411.png"), width = 800, height = 600)
 autoplot(salesForecast, ylab='Inflation Rate (%)')
-
 dev.off()
