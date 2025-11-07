@@ -60,8 +60,10 @@ This project focuses on forecasting the **Inflation Rate (%)** using **ARIMA (Au
 
 8. **Forecasting:**
    - A **12-month forecast** was generated using the preferred ARIMA(4,1,1) model.
-   - The results indicate that inflation is expected to **continue rising** over the next year, maintaining a consistent upward trend with stable variance.
-   - A **95% confidence interval** was included to quantify uncertainty in predictions.
+   - The plot in below shows the forecasted inflation rate (%) for the next 12 months based on the **ARIMA (4,1,1)** model with drift, with a 95% confidence interval shaded in blue. The solid line represents the forecasted mean, which continues **the upward trend in inflation from which we can say that the Inflation rate is only going to go higher** in the coming time. The variance appears relatively constant over the forecast period.
+   <p align="center">
+     <img src="./Forecast_ARIMA_411.png" alt="Forecast" width="600"/>
+   </p>
 
 ---
 
@@ -86,13 +88,3 @@ This project focuses on forecasting the **Inflation Rate (%)** using **ARIMA (Au
 - `ACF_PACF_Inflation.png` - ACF & PACF plots of original series  
 - `ACF_PACF_Differenced.png` - ACF & PACF plots of differenced series  
 - `Forecast_ARIMA_411.png` - 12-month forecast plot  
-
----
-
-## Conclusion
-
-The plot in below shows the forecasted inflation rate (%) for the next 12 months based on the **ARIMA (4,1,1)** model with drift, with a 95% confidence interval shaded in blue. The solid line represents the forecasted mean, which continues **the upward trend in inflation from which we can say that the Inflation rate is only going to go higher** in the coming time. The variance appears relatively constant over the forecast period.  
-
-<p align="center">
-  <img src="./Forecast_ARIMA_411.png" alt="Forecast" width="600"/>
-</p>
